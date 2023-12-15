@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Adicionei padding */
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.create-link {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.pagination li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.pagination .page-item .page-link {
+    font-size: 35px;
+    display: inline;
+}
+
+.user-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.permissions-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.permissions input,
+.permissions label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.alert-success {
+    background-color: #ddffdd;
+    color: #333;
+    border: 1px solid #99cc99;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .alert-success h4 {
+    margin-top: 0;
+  }
+
+  .alert-danger {
+    background-color: #ffdddd;
+    color: #333;
+    border: 1px solid #cc3333;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .alert-danger h4 {
+    margin-top: 0;
+  }

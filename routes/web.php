@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use Illuminate\Auth\Events\Logout;
 
+use App\Http\Controllers\AdminController;
+
 /**
  * Rota principal chama o ControllerHome
  */
@@ -58,10 +60,20 @@ Route::middleware(['user', 'check.permission:manage_products'])->group(function 
 
 /**
  * Configura a rota /admin/ com o Middleware que vai verificar
- * se aém de logado ele tem nivel de acesso "admin"
+ * se alem de logado ele tem nivel de acesso "admin"
  */
 Route::middleware(['admin'])->group(function () {
     Route::get('/admin', function () {
         return view('admin/home');
     })->name('admin.dashboard');
+
+    Route::get('/admin/manage_users', [AdminController::class, 'manageUsers'])->name('admin.manage_users');
+
+    Route::get('/admin/create_users', [AdminController::class, 'index'])->name('admin.create_users');
+
+    Route::post('/admin/create_users', [AdminController::class, 'createUsers'])->name('admin.try_create_users');
+
+    Route::get('/admin/manage_permissions', function(){
+        return view('admin/manage_permission');
+    })->name('admin.manage_permissions');
 });

@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de login com diferentes níveis de autenticação e permissões </title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <h1>Sistema de login com diferentes níveis de autenticação e permissões</h1>
     @yield('content')
+
 </body>
 </html>

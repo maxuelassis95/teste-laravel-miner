@@ -2,9 +2,7 @@
 
 @section('content')
 
-
-
- <h2>Inicio</h2>
+ <h2>Home</h2>
 
 @if (auth()->check())
 

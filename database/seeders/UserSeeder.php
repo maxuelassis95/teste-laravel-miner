@@ -21,22 +21,29 @@ class UserSeeder extends Seeder
 
         User::factory(10)->create();
 
-        /* try{
+         try{
 
         User::create([
-            'name' => 'João',
-            'email' => 'joao@gmail.com',
-            'password' => bcrypt('012345678'),
+            'name' => 'Maxuel',
+            'email' => 'maxuelassis95@gmail.com',
+            'password' => bcrypt('12345'),
         ]);
 
         User::create([
             'name' => 'Natalia',
             'email' => 'natalia@gmail.com',
-            'password' => bcrypt('012345678'),
+            'password' => bcrypt('12345'),
         ]);
+
+        User::create([
+            'name' => 'João',
+            'email' => 'joao@gmail.com',
+            'password' => bcrypt('12345'),
+        ]);
+
         } catch (\Exception $e) {
             dd($e->getMessage());
-        } */
+        }
 
     }
 }

@@ -24,3 +24,15 @@ Route::controller(LoginController::class)->group(function() {
     Route::post('login', 'trylogin')->name('login.trylogin');
     Route::get('logout', 'destroy')->name('login.destroy');
 });
+
+Route::middleware(['user'])->group(function () {
+    Route::get('/user', function () {
+        return 'Esta é a rota para usuários normais';
+    });
+});
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin', function () {
+        return 'Esta é a rota para administradores';
+    });
+});

@@ -12,7 +12,7 @@ Olá {{ auth()->user()->name }}<a href="{{route('login.destroy');}}"> Sair </a>
 
 @else
 
-<a href="{{route('login.index');}}"> Login </a>
+<a href="{{ route('login.index') }}"> Login </a>
 
 @endif
 

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\UserPermission;
+use App\Models\Permission;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,12 +15,21 @@ class PermissionSeeder extends Seeder
     {
 
         /**
-         * Cria as três permissões para o teste
+         * Como irá ter apenas três permissões, manage-product, manage-brand e manage-category,
+         * eu realizo uma verificação, para caso tente rodar o db:seed novamente não ocorra erro
          */
 
-         UserPermission::create(['name' => 'manage_brands']);
-         UserPermission::create(['name' => 'manage_categories']);
-         UserPermission::create(['name' => 'manage_products']);
+         // Verifica se já existem registros na tabela 'permissions'
+        if (Permission::count() === 0) {
+            // Se não houver registros, cria novos
+            Permission::create(['name' => 'manage_brands']);
+            Permission::create(['name' => 'manage_categories']);
+            Permission::create(['name' => 'manage_products']);
+        } else {
 
+            $this->command->info('Permissions já foram seedados. Pulando a operação.');
+
+        }
     }
+
 }

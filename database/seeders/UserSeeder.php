@@ -19,19 +19,24 @@ class UserSeeder extends Seeder
          * se quiser usar mais,use o factory descomentando a linha abaixo e comentando o restante desse bloco.
          */
 
-        // User::factory(10)->create();
+        User::factory(10)->create();
+
+        /* try{
 
         User::create([
             'name' => 'João',
             'email' => 'joao@gmail.com',
-            'password' => bcrypt('01234567'),
+            'password' => bcrypt('012345678'),
         ]);
 
         User::create([
             'name' => 'Natalia',
             'email' => 'natalia@gmail.com',
-            'password' => bcrypt('11234567'),
+            'password' => bcrypt('012345678'),
         ]);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        } */
 
     }
 }

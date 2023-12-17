@@ -29,7 +29,7 @@
                             Sem permissões
                         @endforelse
                     </td>
-                    <td><a href="#">Editar</a></td>
+                    <td><a href="{{ route('admin.manage_users') }}/{{ $user->id }}">Editar</a></td>
                     <td><a href="#">Excluir</a></td>
                 </tr>
             @endforeach

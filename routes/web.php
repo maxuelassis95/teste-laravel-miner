@@ -73,6 +73,11 @@ Route::middleware(['admin'])->group(function () {
 
     Route::post('/admin/create_users', [AdminController::class, 'createUsers'])->name('admin.try_create_users');
 
+    Route::get('/admin/manage_users/{id}', [AdminController::class, 'editUsers'])->name('admin.edit_users');
+
+    Route::put('/admin/manage_users/{id}/basic-info', [AdminController::class, 'execEditUsers'])->name('admin.exec_edit_users');
+
+
     Route::get('/admin/manage_permissions', function(){
         return view('admin/manage_permission');
     })->name('admin.manage_permissions');

@@ -38,7 +38,6 @@
         <label for="is_admin">É Administrador?</label>
         <input type="checkbox" name="is_admin" id="is_admin" onclick="togglePermissions()">
 
-        <label class="permissions-label">Quais permissões ele deverá ter?</label>
         <div class="permissions" id="permissions">
             <label for="permissions">Quais permissões ele deverá ter?</label>
 

@@ -1,68 +1,139 @@
-# Teste realizado por Maxuel Assis para vaga de Desenvolvedor PHP Laravel na Miner Tecnologia
+# Aplicação teste Laravel Miner (Back-End)
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Este é um guia rápido para configurar e executar a aplicação em seu ambiente local.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Foco Principal
 
-## About Laravel
+Esta aplicação é projetada com um foco central no desenvolvimento back-end, lidando com a lógica, manipulação de dados e integração com o banco de dados. O front-end é mantido de forma simplificada para fins de teste, e a ênfase está na construção de uma robusta camada de servidor.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tecnologias Utilizadas
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Laravel 10.37.2:** O framework PHP moderno e poderoso para desenvolvimento web.
+- **PHP 8.1.10:** A linguagem de programação principal para o back-end da aplicação.
+- **Blade:** O mecanismo de template do Laravel, utilizado para criar views de forma elegante e eficiente.
+- **Composer 2.4.1:** O gerenciador de dependências para PHP utilizado para instalar e gerenciar pacotes no Laravel.
+- **MySQL 8.0.30:** Sistema de gerenciamento de banco de dados relacional usado para armazenar dados da aplicação.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Pré-requisitos
 
-## Learning Laravel
+1. **Ambiente de Desenvolvimento:**
+   - Recomendo o uso de um ambiente como o [Laragon](https://laragon.org/) para facilitar a configuração do Apache, PHP e MySQL.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. **PHP:**
+   - Certifique-se de ter o PHP instalado (versão recomendada: 7.4 ou superior).
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+3. **Composer:**
+   - Instale o [Composer](https://getcomposer.org/), uma ferramenta de gerenciamento de dependências para PHP.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Servidor de Desenvolvimento
 
-## Laravel Sponsors
+1. **Inicie os Serviços do Laragon:**
+   - Antes de iniciar o servidor embutido do Laravel, certifique-se de ter iniciado os serviços do Laragon (ou ambiente de desenvolvimento similar). Isso inclui o servidor web (por exemplo, Apache) e o servidor de banco de dados (por exemplo, MySQL).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+     - No Laragon, clique no botão "Start All" no painel do Laragon para iniciar todos os serviços necessários.
 
-### Premium Partners
+2. **Inicie o Servidor Embutido do Laravel:**
+   - Após iniciar os serviços do Laragon, você pode iniciar o servidor embutido do Laravel usando o seguinte comando:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+     ```bash
+     php artisan serve
+     ```
 
-## Contributing
+   - Acesse a aplicação em [http://localhost:8000](http://localhost:8000).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Configuração Inicial
 
-## Code of Conduct
+1. **Clone o Repositório:**
+   - Clone este repositório para o seu ambiente de desenvolvimento local. Escolha a pasta apropriada com base no seu servidor local:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+     - **Laragon (www):**
+       ```bash
+       git clone https://github.com/maxuelassis95/teste-laravel-miner.git C:/laragon/www/teste-laravel-miner
+       ```
 
-## Security Vulnerabilities
+     - **XAMPP (htdocs):**
+       ```bash
+       git clone https://github.com/maxuelassis95/teste-laravel-miner.git C:/xampp/htdocs/teste-laravel-miner
+       ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+     - **Wamp (www):**
+       ```bash
+       git clone https://github.com/maxuelassis95/teste-laravel-miner.git C:/wamp/www/teste-laravel-miner
+       ```
 
-## License
+2. **Instale as Dependências:**
+   - Execute o seguinte comando para instalar as dependências do Laravel.
+     ```bash
+     composer install
+     ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. **Crie um Arquivo .env:**
+   - Copie o arquivo de exemplo `.env.example` para um novo arquivo chamado `.env`.
+     ```bash
+     cp .env.example .env
+     ```
+
+4. **Configure o .env:**
+   - Edite o arquivo `.env` e ajuste as configurações, especialmente as relacionadas ao banco de dados.
+
+     ```dotenv
+     APP_NAME=SuaAplicacao
+     APP_ENV=local
+     APP_KEY=ChaveGeradaAutomaticamenteAoExecutarArtisanKeyGenerate
+     ...
+     ```
+
+   - **Importante:** Execute o seguinte comando para gerar a chave única da aplicação.
+
+     ```bash
+     php artisan key:generate
+     ```
+
+
+## Banco de Dados
+
+1. **Criação do Banco de Dados:**
+   - Antes de prosseguir, crie um banco de dados vazio no seu sistema de gerenciamento de banco de dados (por exemplo, MySQL).
+
+2. **Atualização do Arquivo .env:**
+   - Abra o arquivo `.env` e ajuste as configurações do banco de dados conforme necessário.
+
+     ```dotenv
+     DB_CONNECTION=mysql
+     DB_HOST=127.0.0.1
+     DB_PORT=3306
+     DB_DATABASE=nome_do_seu_banco_de_dados
+     DB_USERNAME=seu_usuario
+     DB_PASSWORD=sua_senha
+     ```
+
+   - Substitua `nome_do_seu_banco_de_dados`, `seu_usuario` e `sua_senha` pelos detalhes do banco de dados que você acabou de criar.
+
+3. **Execução de Migrações e Seeders:**
+   - Após configurar o arquivo `.env`, execute as migrações do banco de dados para criar as tabelas necessárias.
+
+     ```bash
+     php artisan migrate
+     ```
+
+   - Em seguida, preencha o banco de dados com dados de exemplo usando os seeders.
+
+     ```bash
+     php artisan db:seed
+     ```
+
+## Usuários de Teste
+
+- **Usuário Padrão:**
+  - Email: user@user.com
+  - Senha: 12345
+
+- **Usuário Administrador:**
+  - Email: admin@admin.com
+  - Senha: 12345
+
+## Contato para Suporte
+
+Se encontrar problemas ou tiver dúvidas durante a configuração, entre em contato pelo email: [maxuelassis95@gmail.com](mailto:maxuelassis95@gmail.com).
+
+---

@@ -24,21 +24,17 @@ class UserSeeder extends Seeder
          try{
 
         User::create([
-            'name' => 'Maxuel',
-            'email' => 'maxuelassis95@gmail.com',
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
             'password' => bcrypt('12345'),
+            'is_admin' => true,
         ]);
 
         User::create([
-            'name' => 'Natalia',
-            'email' => 'natalia@gmail.com',
+            'name' => 'User',
+            'email' => 'user@user.com',
             'password' => bcrypt('12345'),
-        ]);
-
-        User::create([
-            'name' => 'João',
-            'email' => 'joao@gmail.com',
-            'password' => bcrypt('12345'),
+            'is_admin' => false,
         ]);
 
         } catch (\Exception $e) {

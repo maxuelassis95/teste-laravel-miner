@@ -9,9 +9,9 @@
         @csrf
 
         <span>Email: </span>
-        <input type="text" name="email" value="baron84@example.net">
+        <input type="text" name="email">
         <span>Senha: </span>
-        <input type="password" name="password" id="" value="12345">
+        <input type="password" name="password" id="">
 
         <div class="error">
             @error('email')

@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Auth\Events\Logout;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PermissionController;
 
 /**
  * Rota principal chama o ControllerHome
@@ -67,18 +68,39 @@ Route::middleware(['admin'])->group(function () {
         return view('admin/home');
     })->name('admin.dashboard');
 
+    /**
+     * Rota responsavel pela listagem de usuarios
+     */
     Route::get('/admin/manage_users', [AdminController::class, 'manageUsers'])->name('admin.manage_users');
 
+    /**
+     * Rotas responsaveis pela criação de novos usuarios
+     */
     Route::get('/admin/create_users', [AdminController::class, 'index'])->name('admin.create_users');
 
     Route::post('/admin/create_users', [AdminController::class, 'createUsers'])->name('admin.try_create_users');
 
+    /**
+     * Rotas responsaveis pela edição usuarios
+     */
     Route::get('/admin/manage_users/{id}', [AdminController::class, 'editUsers'])->name('admin.edit_users');
 
     Route::put('/admin/manage_users/{id}/basic-info', [AdminController::class, 'execEditUsers'])->name('admin.exec_edit_users');
 
+    /**
+     * Rota responsável por excluir usuarios
+     */
+    Route::delete('/admin/manage_users/{id}/delete', [AdminController::class, 'deleteUser'])->name('admin.delete_users');
 
-    Route::get('/admin/manage_permissions', function(){
-        return view('admin/manage_permission');
-    })->name('admin.manage_permissions');
+
+
+    /**
+     * Rotas responsáveis pela edição de permissões
+     */
+    Route::get('/admin/manage_permissions', [PermissionController::class, 'index'])->name('admin.manage_permissions');
+
+    Route::get('/admin/manage_permissions/{id}', [PermissionController::class, 'edit'])->name('admin.edit_permissions');
+
+    Route::post('/admin/update_permissions/{id}/exec', [PermissionController::class, 'update'])->name('admin.exec_edit_permissions');
+
 });

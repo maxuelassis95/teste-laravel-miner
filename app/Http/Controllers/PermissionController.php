@@ -2,64 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Permission;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Permission;
 
 class PermissionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        // Lista todos os usuários com suas permissões
+        $users = User::with('permissions')->get();
+
+        return view('admin.manage_permission', compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function edit($id)
     {
-        //
+        // Obtém o usuário pelo ID com suas permissões
+        $user = User::with('permissions')->find($id);
+
+        // Obtém todas as permissões disponíveis
+        $permissions = Permission::all();
+
+        return view('admin.edit_permission', compact('user', 'permissions'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        // Validação dos dados do formulário
+        $request->validate([
+            'permissions' => 'array|required',
+        ], [
+            'permissions.required' => 'Usuario deve ter pelo menos uma permissão',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Permission $permission)
-    {
-        //
-    }
+        // Encontra o usuário pelo ID
+        $user = User::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Permission $permission)
-    {
-        //
-    }
+        // Atualiza as permissões do usuário
+        $permissions = $request->input('permissions', []);
+        $user->permissions()->sync($permissions);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Permission $permission)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Permission $permission)
-    {
-        //
+        // Redireciona com uma mensagem de sucesso
+        return redirect()->route('admin.manage_permissions')->with('success', 'Permissões do usuário atualizadas com sucesso!');
     }
 }

@@ -13,9 +13,11 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
-    padding: 12px; /* Adicionei padding */
+    padding: 12px;
+    /* Adicionei padding */
     text-align: left;
     vertical-align: middle;
 }
@@ -81,21 +83,25 @@ button {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 15px;
-  }
+}
 
-  .alert-success h4 {
+.alert-success h4 {
     margin-top: 0;
-  }
+}
 
-  .alert-danger {
+.alert-danger {
     background-color: #ffdddd;
     color: #333;
     border: 1px solid #cc3333;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 15px;
-  }
+}
 
-  .alert-danger h4 {
+.alert-danger h4 {
     margin-top: 0;
-  }
+}
+
+.btn:hover {
+    cursor: pointer;
+}
